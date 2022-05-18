@@ -18,6 +18,17 @@ class OwnerController {
         return res.json(owner)
     }
 
+    async updateOwner (req, res) {
+        const {id, owner_name} = req.body
+        const owner = await Owner.update({id, owner_name}, {where: {id: owner_name}})
+        return res.json(owner)
+    }
+
+    async deleteOwner (req, res) {
+        const {id} = req.body
+        const owner = await Owner.update({id}, {where: {id: id}})
+        return res.json(owner)
+    }
 }
 
 module.exports = new OwnerController()

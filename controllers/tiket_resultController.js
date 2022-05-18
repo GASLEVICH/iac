@@ -21,6 +21,8 @@ class Tiket_resultController {
         return res.json(tiket_result)
     }
 
+
+
 }
 
 module.exports = new Tiket_resultController()
